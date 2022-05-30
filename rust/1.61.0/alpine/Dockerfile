@@ -1,6 +1,6 @@
 # TAGS: stable
 # VARIANT:
-# PLATFORMS: linux/amd64, linux/arm64/v8, linux/arm/v7, linux/ppc64le, linux/s390x
+# PLATFORMS: linux/amd64, linux/arm64/v8, linux/arm/v7, linux/i386
 FROM rust:1.61.0-alpine
 
 WORKDIR /app
