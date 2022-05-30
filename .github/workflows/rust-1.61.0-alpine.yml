@@ -30,7 +30,9 @@ jobs:
         uses: actions/setup-node@v3.2.0
 
       - name: Set WORKDIR
-        run: echo "WORKDIR=rust/1.61.0/alpine" >> $GITHUB_ENV
+        run: |
+          echo "WORKDIR=rust/1.61.0/alpine" >> $GITHUB_ENV
+          echo "ROOTDIR=rust" >> $GITHUB_ENV
 
       - name: Extract recipe from Dockerfile
         id: recipe
@@ -65,7 +67,8 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v3.0.0
         with:
-          context: ${{ env.WORKDIR }}
+          context: ${{ env.ROOTDIR }}
+          file: ${{ env.WORKDIR }}/Dockerfile
           platforms: |
             ${{ steps.recipe.outputs.platforms }}
           push: ${{ github.event_name == 'push' }}
