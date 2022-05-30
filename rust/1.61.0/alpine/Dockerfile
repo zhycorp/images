@@ -6,8 +6,7 @@ FROM rust:1.61.0-alpine
 WORKDIR /app
 
 RUN apk add --no-cache --update \
-        bash iproute2 git sqlite sqlite-dev \
-        zip tar curl g++ make \
+        git dnsutils curl iproute2 ffmpeg \
     && adduser -D -h /home/container container
 
 USER container
