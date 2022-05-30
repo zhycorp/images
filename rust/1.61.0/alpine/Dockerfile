@@ -15,5 +15,5 @@ USER container
 ENV USER=container HOME=/home/container CARGO_HOME=/home/container/.cargo
 WORKDIR /home/container
 
-COPY ./entrypoint.sh /entrypoint.sh
+COPY ../entrypoint.sh /entrypoint.sh
 

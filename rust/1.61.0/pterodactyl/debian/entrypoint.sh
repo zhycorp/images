@@ -1,1 +1,0 @@
-/home/zen/projects/zhycorp/images/rust/1.61.0/pterodactyl/entrypoint.sh
