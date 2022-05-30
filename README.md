@@ -4,7 +4,7 @@
 
 # @zhycorp/images
 
-**A collection of Docker images that used by Zhycorp services**
+**A collection of [Pterodactyl](https://pterodactyl.io) Docker images that used by Zhycorp services**
 
 [![GitHub](https://img.shields.io/github/license/zhycorp/images)](https://github.com/zhycorp/images/blob/main/LICENSE)
 [![Discord](https://discordapp.com/api/guilds/332877090003091456/embed.png)](https://zhycorp.org/discord)
