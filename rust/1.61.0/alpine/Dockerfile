@@ -6,7 +6,7 @@ FROM rust:1.61.0-alpine
 WORKDIR /app
 
 RUN apk add --no-cache --update \
-        git dnsutils curl iproute2 \
+        git curl iproute2 \
     && adduser -D -h /home/container container
 
 USER container
