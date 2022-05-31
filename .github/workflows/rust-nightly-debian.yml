@@ -32,7 +32,7 @@ jobs:
       - name: Set WORKDIR
         run: |
           echo "WORKDIR=rust/nightly/debian" >> $GITHUB_ENV
-          echo "ROOTDIR=rust/nightly" >> $GITHUB_ENV
+          echo "ROOTDIR=rust" >> $GITHUB_ENV
 
       - name: Extract recipe from Dockerfile
         id: recipe
