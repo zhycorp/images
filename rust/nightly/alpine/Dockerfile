@@ -18,7 +18,8 @@ RUN apk add --no-cache --update \
 USER container
 
 ENV USER=container \
-    HOME=/home/container
+    HOME=/home/container \
+    CARGO_HOME=/home/container/.cargo
 
 WORKDIR /home/container
 
