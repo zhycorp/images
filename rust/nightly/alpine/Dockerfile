@@ -11,6 +11,7 @@ ENV RUSTUP_HOME=/usr/local/rustup \
 
 RUN apk add --no-cache --update \
         ca-certificates git curl iproute2 gcc g++ musl-dev cmake make clang lld bash \
+    && rustup toolchain install nightly \
     && rustup component add rust-src --toolchain nightly-x86_64-unknown-linux-gpu \
     && adduser -D -h /home/container container 
 
