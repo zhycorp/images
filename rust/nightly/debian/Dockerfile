@@ -6,7 +6,7 @@ FROM alpine:3.16.0
 WORKDIR /app
 
 RUN apt-get update \
-    && apt-get -y install git dnsutils curl iproute2 gcc g++ musl-dev cmake make \
+    && apt-get -y install git curl iproute2 gcc g++ musl-dev cmake make \
     && adduser -D -h /home/container container \
     && curl -sSf https://sh.rustup.rs | sh -s -- --profile minimal --component rust-src --default-toolchain nightly -y
 

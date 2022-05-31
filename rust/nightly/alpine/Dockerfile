@@ -6,7 +6,7 @@ FROM debian:buster-slim
 WORKDIR /app
 
 RUN apk add --no-cache --update \
-        git dnsutils curl iproute2 gcc g++ musl-dev cmake make \
+        git curl iproute2 gcc g++ musl-dev cmake make \
     && adduser -D -h /home/container container \
     && curl -sSf https://sh.rustup.rs | sh -s -- --profile minimal --component rust-src --default-toolchain nightly -y
 
