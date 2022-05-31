@@ -6,7 +6,7 @@ FROM rust:1.61.0-slim
 WORKDIR /app
 
 RUN apt-get update \
-    && apt-get -y install git dnsutils curl iproute2 cmake \
+    && apt-get -y install git dnsutils gcc g++ musl-dev cmake make clang lld \
     && adduser -D -h /home/container container
 
 USER container
