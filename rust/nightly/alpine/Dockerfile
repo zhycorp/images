@@ -1,14 +1,13 @@
 # TAGS: nightly
 # VARIANT: ptero
 # PLATFORMS: linux/amd64, linux/arm64/v8
-FROM alpine:3.16.0
+FROM rustlang/rust:nightly-alpine
 
 WORKDIR /app
 
 RUN apk add --no-cache --update \
         git curl iproute2 gcc g++ musl-dev cmake make clang lld bash \
-    && adduser -D -h /home/container container \
-    && curl -sSf https://sh.rustup.rs | sh -s -- --profile minimal --component rust-src --default-toolchain nightly -y
+    && adduser -D -h /home/container container 
 
 USER container
 ENV USER=container HOME=/home/container CARGO_HOME=/home/container/.cargo

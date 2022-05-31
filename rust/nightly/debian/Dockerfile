@@ -1,14 +1,13 @@
 # TAGS: nightly
 # VARIANT: ptero
 # PLATFORMS: linux/amd64, linux/arm64/v8
-FROM debian:buster-slim
+FROM rustlang/rust:nightly-slim
 
 WORKDIR /app
 
 RUN apt-get update \
     && apt-get -y install git curl iproute2 gcc g++ musl-dev cmake make clang lld \
-    && adduser -D -h /home/container container \
-    && curl -sSf https://sh.rustup.rs | sh -s -- --profile minimal --component rust-src --default-toolchain nightly -y
+    && adduser -D -h /home/container container 
 
 USER container
 ENV USER=container HOME=/home/container CARGO_HOME=/home/container/.cargo
