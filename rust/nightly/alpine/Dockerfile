@@ -6,7 +6,7 @@ FROM alpine:3.16.0
 WORKDIR /app
 
 RUN apk add --no-cache --update \
-        git curl iproute2 gcc g++ musl-dev cmake make clang lld \
+        git curl iproute2 gcc g++ musl-dev cmake make clang lld bash \
     && adduser -D -h /home/container container \
     && curl -sSf https://sh.rustup.rs | sh -s -- --profile minimal --component rust-src --default-toolchain nightly -y
 
