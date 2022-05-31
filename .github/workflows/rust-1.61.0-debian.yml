@@ -1,16 +1,16 @@
-name: Build & Push rust/nightly/alpine to Image Registry
+name: Build & Push rust/1.61.0/debian to Image Registry
 
 on:
   push:
     branches:
       - main
     paths:
-      - "rust/nightly/alpine/**"
+      - "rust/1.61.0/debian/**"
   pull_request:
     branches:
       - main
     paths:
-      - "rust/nightly/alpine/**"
+      - "rust/1.61.0/debian/**"
 
 jobs:
   build:
@@ -31,8 +31,8 @@ jobs:
 
       - name: Set WORKDIR
         run: |
-          echo "WORKDIR=rust/nightly/alpine" >> $GITHUB_ENV
-          echo "ROOTDIR=rust/nightly" >> $GITHUB_ENV
+          echo "WORKDIR=rust/1.61.0/debian" >> $GITHUB_ENV
+          echo "ROOTDIR=rust" >> $GITHUB_ENV
 
       - name: Extract recipe from Dockerfile
         id: recipe
