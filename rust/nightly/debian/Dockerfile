@@ -1,45 +1,25 @@
 # TAGS: nightly
 # VARIANT: ptero
 # PLATFORMS: linux/amd64, linux/arm64/v8
-FROM debian:stable-slim as build-stage
+FROM --platform=$BUILDPLATFORM rustlang/rust:nightly-slim
 
-ENV RUSTUP_HOME=/usr/local/rustup \
-    CARGO_HOME=/usr/local/cargo \
-    PATH=/usr/local/cargo/bin:$PATH
+ARG BUILDPLATFORM
 
 WORKDIR /app
 
 RUN apt-get update \
-    && apt-get -y install git curl iproute2 gcc g++ musl-dev cmake make clang lld libc6-dev ca-certificates \
+    && apt-get -y install git curl iproute2 gcc g++ musl-dev cmake make clang lld libc6-dev \
+    && if [ "$BUILDPLATFORM" == "linux/amd64" ]; then export TOOLCHAIN=nightly-x86_64-unknown-linux-gnu; \
+        else export TOOLCHAIN=aarch64-unknown-linux-gnu; fi \
+    && rustup toolchain install $TOOLCHAIN \
+    && rustup component add rust-src --toolchain $TOOLCHAIN \
     && adduser -D -h /home/container container 
 
-RUN set -eux; \
-    dpkgArch="$(dpkg --print-architecture)"; \
-    case "${dpkgArch##*-}" in \
-        amd64) rustArch='x86_64-unknown-linux-gnu' ;; \
-        arm64) rustArch='aarch64-unknown-linux-gnu' ;; \
-        *) echo >&2 "unsupported architecture: ${dpkgArch}"; exit 1 ;; \
-    esac; \
-    \
-    url="https://static.rust-lang.org/rustup/dist/${rustArch}/rustup-init"; \
-    wget "$url"; \
-    chmod +x rustup-init; \
-    ./rustup-init -y --no-modify-path --default-toolchain nightly --profile minimal --component rust-src --default-toolchain nightly; \
-    rm rustup-init; \
-    chmod -R a+w $RUSTUP_HOME $CARGO_HOME; \
-    rustup --version; \
-    cargo --version; \
-    rustc --version; \
-    \
-    apt-get remove -y --auto-remove \
-        wget \
-        ; \
-    rm -rf /var/lib/apt/lists/*;
-
-FROM debian:stable-slim
-
 USER container
-ENV USER=container HOME=/home/container CARGO_HOME=/home/container/.cargo
+
+ENV USER=container \
+    HOME=/home/container CARGO_HOME=/home/container/.cargo
+    
 WORKDIR /home/container
 
 COPY ../../entrypoint.sh /entrypoint.sh
