@@ -1,7 +1,7 @@
 # TAGS: nightly
 # VARIANT: ptero
 # PLATFORMS: linux/amd64, linux/arm64/v8
-FROM debian:buster-slim
+FROM alpine:3.16.0
 
 WORKDIR /app
 
