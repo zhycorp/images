@@ -1,7 +1,7 @@
 # TAGS: nightly
 # VARIANT: alpine-ptero
 # PLATFORMS: linux/amd64, linux/arm64/v8
-FROM alpine:3.16.0
+FROM alpine:3.16.0 as build-stage
 
 WORKDIR /app
 
@@ -24,12 +24,14 @@ RUN set -eux; \
     url="https://static.rust-lang.org/rustup/dist/${rustArch}/rustup-init"; \
     wget "$url"; \
     chmod +x rustup-init; \
-    ./rustup-init -y --no-modify-path --default-toolchain nightly --profile minimal --component rust-src --default-toolchain nightly -y; \
+    ./rustup-init -y --no-modify-path --default-toolchain nightly --profile minimal --component rust-src --default-toolchain nightly; \
     rm rustup-init; \
     chmod -R a+w $RUSTUP_HOME $CARGO_HOME; \
     rustup --version; \
     cargo --version; \
     rustc --version;
+
+FROM alpine:3.16.0
 
 USER container
 ENV USER=container HOME=/home/container CARGO_HOME=/home/container/.cargo
