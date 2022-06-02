@@ -1,7 +1,7 @@
 # TAGS: nightly
 # VARIANT: ptero
 # PLATFORMS: linux/amd64, linux/arm64/v8
-FROM --platform=$BUILDPLATFORM rustlang/rust:nightly-slim
+FROM --platform=$BUILDPLATFORM debian:buster-slim
 
 ARG BUILDPLATFORM
 
