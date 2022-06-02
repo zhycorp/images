@@ -1,7 +1,7 @@
 # TAGS: nightly
 # VARIANT: alpine-ptero
 # PLATFORMS: linux/amd64, linux/arm64/v8
-FROM --platform=$BUILDPLATFORM rustlang/rust:nightly-alpine
+FROM --platform=$BUILDPLATFORM docker.io/library/alpine:edge
 
 ARG BUILDPLATFORM
 
