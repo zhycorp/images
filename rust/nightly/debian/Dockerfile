@@ -7,10 +7,15 @@ ARG BUILDPLATFORM
 
 WORKDIR /app
 
+ENV RUSTUP_HOME=/usr/local/rustup \
+    CARGO_HOME=/usr/local/cargo \
+    PATH=/usr/local/cargo/bin:$PATH
+
 RUN apt-get update \
     && apt-get -y install git curl iproute2 gcc g++ musl-dev cmake make clang lld libc6-dev \
-    && if [ "$BUILDPLATFORM" == "linux/amd64" ]; then export TOOLCHAIN=nightly-x86_64-unknown-linux-gnu; \
-        else export TOOLCHAIN=aarch64-unknown-linux-gnu; fi \
+    && curl -sSf https://sh.rustup.rs | sh -s -- --profile minimal --component rust-src --default-toolchain nightly -y \
+    && if [ "$BUILDPLATFORM" == "linux/amd64" ]; then export TOOLCHAIN=nightly-x86_64-unknown-linux-musl; \
+        else export TOOLCHAIN=nightly-aarch64-unknown-linux-gnu; fi \
     && rustup toolchain install $TOOLCHAIN \
     && rustup component add rust-src --toolchain $TOOLCHAIN \
     && adduser -D -h /home/container container 
