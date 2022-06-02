@@ -10,7 +10,7 @@ WORKDIR /app
 RUN apk add --no-cache --update \
         git curl iproute2 gcc g++ musl-dev cmake make clang lld bash \
     && if [ "$BUILDPLATFORM" == "linux/amd64" ]; then export TOOLCHAIN=nightly-x86_64-unknown-linux-musl; \
-        else export TOOLCHAIN=aarch64-unknown-linux-musl; fi \
+        else export TOOLCHAIN=nightly-aarch64-unknown-linux-musl; fi \
     && rustup toolchain install $TOOLCHAIN \
     && rustup component add rust-src --toolchain $TOOLCHAIN \
     && adduser -D -h /home/container container 
