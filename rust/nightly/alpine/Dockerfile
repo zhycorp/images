@@ -13,7 +13,7 @@ ENV RUSTUP_HOME=/usr/local/rustup \
 
 RUN apk add --no-cache --update \
         git curl iproute2 gcc g++ musl-dev cmake make clang lld bash \
-    && curl -sSf https://sh.rustup.rs | sh -s -- --profile minimal --component rust-src --default-toolchain nightly -y
+    && curl -sSf https://sh.rustup.rs | sh -s -- --profile minimal --component rust-src --default-toolchain nightly -y \
     && if [ "$BUILDPLATFORM" == "linux/amd64" ]; then export TOOLCHAIN=nightly-x86_64-unknown-linux-musl; \
         else export TOOLCHAIN=nightly-aarch64-unknown-linux-musl; fi \
     && rustup toolchain install $TOOLCHAIN \
