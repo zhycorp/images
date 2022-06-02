@@ -13,6 +13,10 @@ RUN apk add --no-cache --update \
         else export TOOLCHAIN=aarch64-unknown-linux-gnu; fi \
     && rustup toolchain install $TOOLCHAIN \
     && rustup component add rust-src --toolchain $TOOLCHAIN \
+    && if [ "$BUILDPLATFORM" == "linux/amd64" ]; then export TOOLCHAIN_MUSL=nightly-x86_64-unknown-linux-musl; \
+        else export TOOLCHAIN_MUSL=aarch64-unknown-linux-musl; fi \
+    && rustup toolchain install $TOOLCHAIN_MUSL \
+    && rustup component add rust-src --toolchain $TOOLCHAIN_MUSL \
     && adduser -D -h /home/container container 
 
 USER container
