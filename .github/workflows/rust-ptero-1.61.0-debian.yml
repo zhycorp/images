@@ -1,0 +1,21 @@
+name: Build & Push rust/pterodactyl/1.61.0/debian to Image Registry
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "rust/pterodactyl/1.61.0/debian/**"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "rust/pterodactyl/1.61.0/debian/**"
+  workflow_dispatch:
+
+jobs:
+  build:
+    uses: ./.github/workflows/build.yml
+    with:
+      root_directory: rust/pterodactyl
+      work_directory: rust/pterodactyl/1.61.0/debian
