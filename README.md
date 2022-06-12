@@ -10,3 +10,6 @@
 [![Discord](https://discordapp.com/api/guilds/332877090003091456/embed.png)](https://zhycorp.org/discord)
 
 </div>
+
+# Usage
+> You can start using our images on [Github Container Registry](https://github.com/orgs/zhycorp/packages?repo_name=images)
