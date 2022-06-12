@@ -19,3 +19,4 @@ jobs:
     with:
       root_directory: rust/pterodactyl
       work_directory: rust/pterodactyl/nightly/debian
+      image_name: rust
