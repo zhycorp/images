@@ -1,7 +1,9 @@
 # TAGS: stable
 # VARIANT: ptero
 # PLATFORMS: linux/amd64, linux/arm64/v8
-FROM rust:1.61.0-slim
+FROM --platform=$BUILDPLATFORM rust:1.61.0-slim
+
+ARG BUILDPLATFORM
 
 WORKDIR /app
 
