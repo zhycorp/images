@@ -1,15 +1,15 @@
 <div align="center">
 
-<img src="https://api.zhycorp.org/assets/images/logo.webp" alt="Zhycorp Logo" width="200px" height="200px"/>
+<img src="https://api.frutbits.org/assets/images/logo.webp" alt="FrutBits Indonesia Logo" width="200px" height="200px"/>
 
-# @zhycorp/images
+# @frutbits/images
 
-**A collection of Docker images that used by Zhycorp project**
+**A collection of Docker images that used by FrutBits Indonesia project**
 
-[![GitHub](https://img.shields.io/github/license/zhycorp/images)](https://github.com/zhycorp/images/blob/main/LICENSE)
-[![Discord](https://discordapp.com/api/guilds/332877090003091456/embed.png)](https://zhycorp.org/discord)
+[![GitHub](https://img.shields.io/github/license/frutbits/images)](https://github.com/frutbits/images/blob/main/LICENSE)
+[![Discord](https://discordapp.com/api/guilds/332877090003091456/embed.png)](https://frutbits.org/discord)
 
 </div>
 
 # Usage
-> You can start using our images on [Github Container Registry](https://github.com/orgs/zhycorp/packages?repo_name=images)
+> You can start using our images on [Github Container Registry](https://github.com/orgs/frutbits/packages?repo_name=images)

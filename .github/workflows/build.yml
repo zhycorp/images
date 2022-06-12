@@ -59,7 +59,7 @@ jobs:
         id: meta
         with:
           images: |
-            ghcr.io/zhycorp/rust
+            ghcr.io/frutbits/rust
           tags: |
             ${{ steps.recipe.outputs.tags }}
 
