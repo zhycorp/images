@@ -1,0 +1,22 @@
+name: Build & Push keydb/pterodactyl/stable to Image Registry
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "keydb/pterodactyl/stable**"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "keydb/pterodactyl/stable**"
+  workflow_dispatch:
+
+jobs:
+  build:
+    uses: ./.github/workflows/build.yml
+    with:
+      root_directory: keydb/pterodactyl
+      work_directory: keydb/pterodactyl/stable
+      image_name: rust
