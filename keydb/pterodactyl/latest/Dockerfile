@@ -1,4 +1,4 @@
-# TAGS: stable
+# TAGS: latest
 # VARIANT: ptero
 # PLATFORMS: linux/amd64, linux/arm64
 
