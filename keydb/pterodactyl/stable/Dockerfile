@@ -1,9 +1,10 @@
 # TAGS: stable
 # VARIANT: ptero
 # PLATFORMS: linux/amd64, linux/arm64/v8
-FROM    eqalpha/keydb
 
-LABEL   author="Michael Parker" maintainer="parker@pterodactyl.io"
+FROM  --platform=$BUILDPLATFORM eqalpha/keydb
+
+LABEL   author="Frutbis Indonesia" maintainer="support@frutbits.org"
 
 ENV     DEBIAN_FRONTEND noninteractive
 

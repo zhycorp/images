@@ -3,6 +3,8 @@
 # PLATFORMS: linux/amd64, linux/arm64/v8
 FROM --platform=$BUILDPLATFORM debian:buster-slim
 
+LABEL author="Frutbis Indonesia" maintainer="support@frutbits.org"
+
 ARG BUILDPLATFORM
 
 WORKDIR /app

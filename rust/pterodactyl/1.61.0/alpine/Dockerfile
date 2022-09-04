@@ -3,6 +3,8 @@
 # PLATFORMS: linux/amd64, linux/arm64/v8
 FROM --platform=$BUILDPLATFORM rust:1.61.0-alpine
 
+LABEL author="Frutbis Indonesia" maintainer="support@frutbits.org"
+
 ARG BUILDPLATFORM
 
 WORKDIR /app
