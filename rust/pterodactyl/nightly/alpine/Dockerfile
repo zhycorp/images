@@ -3,7 +3,7 @@
 # PLATFORMS: linux/amd64, linux/arm64/v8
 FROM --platform=$BUILDPLATFORM docker.io/library/alpine:edge
 
-LABEL author="Frutbis Indonesia" maintainer="support@frutbits.org"
+LABEL author="Frutbits Indonesia" maintainer="support@frutbits.org"
 
 ARG BUILDPLATFORM
 

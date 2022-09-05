@@ -3,7 +3,7 @@
 # PLATFORMS: linux/amd64, linux/arm64
 FROM  --platform=$BUILDPLATFORM eqalpha/keydb:latest
 
-LABEL   author="Frutbis Indonesia" maintainer="support@frutbits.org"
+LABEL   author="Frutbits Indonesia" maintainer="support@frutbits.org"
 
 ENV     DEBIAN_FRONTEND noninteractive
 
