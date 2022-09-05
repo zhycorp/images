@@ -1,7 +1,7 @@
 # TAGS: stable
-# VARIANT: ptero
+# VARIANT: alpine-ptero
 # PLATFORMS: linux/amd64, linux/arm64/v8
-FROM --platform=$BUILDPLATFORM rust:1.61.0-slim
+FROM --platform=$BUILDPLATFORM rust:1.62.0-alpine
 
 LABEL author="Frutbits Indonesia" maintainer="support@frutbits.org"
 
@@ -9,8 +9,8 @@ ARG BUILDPLATFORM
 
 WORKDIR /app
 
-RUN apt-get update \
-    && apt-get -y install git dnsutils gcc g++ musl-dev cmake make clang lld \
+RUN apk add --no-cache --update \
+        git curl iproute2 bash gcc g++ musl-dev cmake make clang lld \
     && adduser -D -h /home/container container
 
 USER container
