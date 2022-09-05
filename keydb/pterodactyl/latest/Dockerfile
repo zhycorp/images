@@ -1,7 +1,6 @@
 # TAGS: latest
 # VARIANT: ptero
 # PLATFORMS: linux/amd64, linux/arm64
-
 FROM  --platform=$BUILDPLATFORM eqalpha/keydb:latest
 
 LABEL   author="Frutbis Indonesia" maintainer="support@frutbits.org"
