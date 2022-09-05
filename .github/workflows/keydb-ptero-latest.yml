@@ -19,4 +19,4 @@ jobs:
     with:
       root_directory: keydb/pterodactyl
       work_directory: keydb/pterodactyl/latest
-      image_name: rust
+      image_name: keydb
