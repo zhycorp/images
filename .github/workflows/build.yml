@@ -39,7 +39,7 @@ jobs:
         uses: docker/setup-buildx-action@dc7b9719a96d48369863986a06765841d7ea23f6 # tag=v2.0.0
 
       - name: Set up Node.js for extracting recipe from Dockerfile
-        uses: actions/setup-node@eeb10cff27034e7acf239c5d29f62154018672fd # tag=v3.3.0
+        uses: actions/setup-node@2fddd8803e2f5c9604345a0b591c3020ee971a93 # tag=v3.4.1
 
       - name: Set WORKDIR
         run: |
@@ -77,7 +77,7 @@ jobs:
 
       - name: Build and push the Docker image from the specified Dockerfile
         id: docker_build
-        uses: docker/build-push-action@e551b19e49efd4e98792db7592c17c09b89db8d8 # tag=v3.0.0
+        uses: docker/build-push-action@c84f38281176d4c9cdb1626ffafcd6b3911b5d94 # tag=v3.1.1
         with:
           context: ${{ env.ROOTDIR }}
           file: ${{ env.WORKDIR }}/Dockerfile
