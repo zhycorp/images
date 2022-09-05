@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - "rust/pterodactyl/1.630/debian/**"
+      - "rust/pterodactyl/1.63.0/debian/**"
   pull_request:
     branches:
       - main
