@@ -5,12 +5,12 @@ on:
     branches:
       - main
     paths:
-      - "keydb/pterodactyl/latest**"
+      - "keydb/pterodactyl/latest/**"
   pull_request:
     branches:
       - main
     paths:
-      - "keydb/pterodactyl/latest**"
+      - "keydb/pterodactyl/latest/**"
   workflow_dispatch:
 
 jobs:
