@@ -1,7 +1,7 @@
 # TAGS: stable
 # VARIANT: ptero
 # PLATFORMS: linux/amd64, linux/arm64/v8
-FROM --platform=$BUILDPLATFORM rust:1.63.0-slim
+FROM --platform=$BUILDPLATFORM rust:1.64.0-slim
 
 LABEL author="Frutbits Indonesia" maintainer="support@frutbits.org"
 
