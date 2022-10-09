@@ -19,7 +19,7 @@ RUN apt-get update \
         ffmpeg \
         git \
         openssl \
-        sqlite \
+        sqlite3 \
         tar \
     && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
     && apt-get autoremove -y \
