@@ -1,0 +1,22 @@
+name: Build & Push node/pterodactyl/18/alpine to Image Registry
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "node/pterodactyl/18/alpine/**"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "node/pterodactyl/18/alpine/**"
+  workflow_dispatch:
+
+jobs:
+  build:
+    uses: ./.github/workflows/build.yml
+    with:
+      root_directory: node/pterodactyl
+      work_directory: node/pterodactyl/18/alpine
+      image_name: node
