@@ -59,7 +59,7 @@ jobs:
           echo "::set-output name=platforms::${PLATFORMS//$', '/'%0A'}"
           echo "::set-output name=variant::$VARIANT"
       - name: Generate Docker image metadata
-        uses: docker/metadata-action@69f6fc9d46f2f8bf0d5491e4aabe0bb8c6a4678a # tag=v4.0.1
+        uses: docker/metadata-action@369eb591f429131d6889c46b94e711f089e6ca96 # v5.6.1
         id: meta
         with:
           images: |
