@@ -1,7 +1,7 @@
 # TAGS: stable
 # VARIANT: alpine-ptero
 # PLATFORMS: linux/amd64, linux/arm64/v8
-FROM --platform=$BUILDPLATFORM rust:1.63.0-alpine
+FROM --platform=$BUILDPLATFORM rust:1.84.1-alpine
 
 LABEL author="Frutbits Indonesia" maintainer="support@frutbits.org"
 
